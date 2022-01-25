@@ -38,7 +38,7 @@ function Title(props) {
             <Tag>{props.children}</Tag>
             <style jsx>{`
                 ${Tag} {
-                color: ${appConfig.theme.colors.neutrals['500']};
+                color: ${appConfig.theme.colors.neutrals['600']};
                 font-size: 24px;
                 font-weight: 600;
                 }
@@ -47,19 +47,9 @@ function Title(props) {
     );
 }
 
-// function HomePage() {
-//   return (
-//     <div>
-//         <GlobalStyle />
-//         <Title tag="h1">Boas vindas de volta!</Title>
-//         <h2>Discord - Alura Matrix</h2>
-//     </div>
-//   )
-// }
-
 // export default HomePage
 export default function PaginaInicial() {
-  const username = 'peas';
+  const username = 'jorgeHAO';
 
   return (
     <>
@@ -67,8 +57,8 @@ export default function PaginaInicial() {
       <Box
         styleSheet={{
           display: 'flex', alignItems: 'center', justifyContent: 'center',
-          backgroundColor: appConfig.theme.colors.primary[500],
-          backgroundImage: 'url(https://virtualbackgrounds.site/wp-content/uploads/2020/08/the-matrix-digital-rain.jpg)',
+          backgroundColor: appConfig.theme.colors.primary['400'],
+          backgroundImage: 'url(https://wallpapercave.com/wp/wp4767673.png)',
           backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundBlendMode: 'multiply',
         }}
       >
@@ -82,11 +72,47 @@ export default function PaginaInicial() {
               sm: 'row',
             },
             width: '100%', maxWidth: '700px',
-            borderRadius: '5px', padding: '32px', margin: '16px',
+            borderRadius: '10px', padding: '50px', margin: '16px',
             boxShadow: '0 2px 10px 0 rgb(0 0 0 / 20%)',
-            backgroundColor: appConfig.theme.colors.neutrals[700],
+            backgroundColor: appConfig.theme.colors.neutrals['1500'],
           }}
         >
+          {/* Photo Area */}
+          <Box
+            styleSheet={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              maxWidth: '200px',
+              padding: '16px',
+              backgroundColor: appConfig.theme.colors.neutrals[1000],
+              border: '0px solid',
+              borderColor: appConfig.theme.colors.neutrals[100],
+              borderRadius: '10px',
+              flex: 1,
+              minHeight: '240px',
+            }}
+          >
+            <Image
+              styleSheet={{
+                borderRadius: '50%',
+                marginBottom: '16px',
+              }}
+              src={`https://github.com/${username}.png`}
+            />
+            <Text
+              variant="body4"
+              styleSheet={{
+                color: appConfig.theme.colors.neutrals[200],
+                backgroundColor: appConfig.theme.colors.neutrals[900],
+                padding: '3px 10px',
+                borderRadius: '1000px'
+              }}
+            >
+              {username}
+            </Text>
+          </Box>
+          {/* Photo Area */}
           {/* Formulário */}
           <Box
             as="form"
@@ -96,7 +122,7 @@ export default function PaginaInicial() {
             }}
           >
             <Title tag="h2">Boas vindas de volta!</Title>
-            <Text variant="body3" styleSheet={{ marginBottom: '32px', color: appConfig.theme.colors.neutrals[300] }}>
+            <Text variant="body3" styleSheet={{ marginBottom: '32px', color: appConfig.theme.colors.neutrals[600] }}>
               {appConfig.name}
             </Text>
 
@@ -124,44 +150,6 @@ export default function PaginaInicial() {
             />
           </Box>
           {/* Formulário */}
-
-
-          {/* Photo Area */}
-          <Box
-            styleSheet={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              maxWidth: '200px',
-              padding: '16px',
-              backgroundColor: appConfig.theme.colors.neutrals[800],
-              border: '1px solid',
-              borderColor: appConfig.theme.colors.neutrals[999],
-              borderRadius: '10px',
-              flex: 1,
-              minHeight: '240px',
-            }}
-          >
-            <Image
-              styleSheet={{
-                borderRadius: '50%',
-                marginBottom: '16px',
-              }}
-              src={`https://github.com/${username}.png`}
-            />
-            <Text
-              variant="body4"
-              styleSheet={{
-                color: appConfig.theme.colors.neutrals[200],
-                backgroundColor: appConfig.theme.colors.neutrals[900],
-                padding: '3px 10px',
-                borderRadius: '1000px'
-              }}
-            >
-              {username}
-            </Text>
-          </Box>
-          {/* Photo Area */}
         </Box>
       </Box>
     </>
